@@ -1,0 +1,21 @@
+.dropdown {
+    display: flex;
+    align-items: center;
+    border: 1px solid  black;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .icon {
+    margin-right: 8px;
+    margin-left: 10px;
+  }
+  
+  .caretIcon {
+    margin-left: auto;
+    margin-right: 20px;
+  }
+  

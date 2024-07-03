@@ -1,0 +1,30 @@
+.app {
+  text-align: center;
+}
+
+.searchSection {
+  display: flex;
+  margin-bottom: 20px;
+  height: 50px;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.colDropdown {
+  flex: 0 0 20%;
+  max-width: 20%;
+}
+
+.colSearch {
+  flex: 0 0 70%;
+  max-width: 80%;
+}
+
+h1 {
+  margin-right: 20px;
+  font-size: 24px;
+}

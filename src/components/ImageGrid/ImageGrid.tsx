@@ -1,37 +1,27 @@
-import React from 'react'
-import ImageCard from '../ImageCard/ImageCard'
-import styles from './ImageGrid.module.scss'
-
-interface Image {
-  id: string
-  title: string
-  photographer: string
-  imageUrl: string
-}
+import React from 'react';
+import ImageCard from '../ImageCard/ImageCard';
+import styles from './ImageGrid.module.scss';
+import { Photo } from '../../features/images/imagesAPI';
 
 interface ImageGridProps {
-  images: Image[]
-  onAddToCart: (id: string) => void
-  onDownload: (id: string) => void
+  photos: Photo[];
+  onAddToCart: (id: number) => void;
+  onDownload: (id: number) => void;
 }
 
-const ImageGrid: React.FC<ImageGridProps> = ({
-  images,
-  onAddToCart,
-  onDownload,
-}) => {
+const ImageGrid: React.FC<ImageGridProps> = ({ photos, onAddToCart, onDownload }) => {
   return (
     <div className={styles.imageGrid}>
-      {images.map((image) => (
+      {photos.map((photo) => (
         <ImageCard
-          key={image.id}
-          {...image}
-          onAddToCart={() => onAddToCart(image.id)}
-          onDownload={() => onDownload(image.id)}
+          key={photo.id}
+          {...photo}
+          onAddToCart={() => onAddToCart(photo.id)}
+          onDownload={() => onDownload(photo.id)}
         />
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default ImageGrid
+export default ImageGrid;

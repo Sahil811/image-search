@@ -1,26 +1,73 @@
+.searchContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+}
+
 .searchBar {
   display: flex;
-  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.searchWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 5px 10px;
+}
+
+.icon {
+  color: #999;
+  margin-right: 10px;
+}
+
+.cameraIcon {
+  margin-right: 10px;
 }
 
 .input {
   flex-grow: 1;
-  padding: 10px;
+  border: none;
+  outline: none;
   font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px 0 0 4px;
+  background: transparent;
+
+  &::placeholder {
+    color: #999;
+  }
 }
 
-.button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: white;
+.input:focus {
+  outline: none;
+}
+
+.input::selection {
+  background: transparent;
+}
+
+.input::-moz-selection {
+  background: transparent;
+}
+
+.imageSearchButton {
+  display: flex;
+  align-items: center;
+  background: none;
   border: none;
-  border-radius: 0 4px 4px 0;
+  border-left: 1px solid black;
+  height: 100%;
+  padding: 10px 15px;
   cursor: pointer;
+  color: black;
+  font-size: 14px;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: #f0f0f0;
   }
+}
+
+.imageSearchText {
+  margin-right: 8px;
 }

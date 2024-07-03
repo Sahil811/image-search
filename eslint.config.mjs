@@ -9,6 +9,16 @@ export default [
   {files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"]},
   { languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } } },
   {languageOptions: { globals: globals.browser }},
+  {
+    rules: {
+      'import/no-unresolved': [
+        'error',
+        {
+          ignore: ['\\.scss$'],
+        },
+      ],
+    },    
+  },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   ...fixupConfigRules(pluginReactConfig),

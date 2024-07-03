@@ -1,6 +1,23 @@
 .imageGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+  column-count: 4;
+  column-gap: 20px;
   padding: 20px;
+}
+
+@media (max-width: 1200px) {
+  .imageGrid {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 900px) {
+  .imageGrid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .imageGrid {
+    column-count: 1;
+  }
 }
