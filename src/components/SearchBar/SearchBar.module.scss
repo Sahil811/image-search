@@ -9,6 +9,7 @@
 .searchBar {
   display: flex;
   flex-grow: 1;
+  height: 100%;
 }
 
 .searchWrapper {
@@ -58,10 +59,10 @@
   border: none;
   border-left: 1px solid black;
   height: 100%;
-  padding: 10px 15px;
   cursor: pointer;
   color: black;
   font-size: 14px;
+  min-width: 180px;
 
   &:hover {
     background-color: #f0f0f0;

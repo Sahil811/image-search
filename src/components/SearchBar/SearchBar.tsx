@@ -28,11 +28,11 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
             className={styles.input}
           />
         </div>
+        <button className={styles.imageSearchButton} type="submit">
+          <FontAwesomeIcon icon={faCamera} className={styles.cameraIcon}/>
+          <span className={styles.imageSearchText}>Search by image</span>
+        </button>
       </form>
-      <button className={styles.imageSearchButton} type="submit">
-        <FontAwesomeIcon icon={faCamera} className={styles.cameraIcon}/>
-        <span className={styles.imageSearchText}>Search by image</span>
-      </button>
     </div>
   );
 };

@@ -15,7 +15,9 @@ import Pagination from './components/Pagination/Pagination';
 import SearchSection from './components/SearchSection/SearchSection';
 import TabNavigation from './components/TabNavigation/TabNavigation';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 import styles from './App.module.scss';
+import Loading from './components/Loading/Loading';
 
 const App: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -26,9 +28,7 @@ const App: React.FC = () => {
   const searchQuery = useAppSelector(selectSearchQuery);
 
   useEffect(() => {
-    if (searchQuery) {
-      dispatch(fetchImages({ query: searchQuery, page: currentPage, per_page: 10 }));
-    }
+    dispatch(fetchImages({ query: searchQuery || "nature", page: currentPage, per_page: 10 }));
   }, [searchQuery, currentPage, dispatch]);
 
   const handleSearch = (query: string) => {
@@ -61,7 +61,7 @@ const App: React.FC = () => {
       <Header />
       <SearchSection onSearch={handleSearch} />
       <TabNavigation onTabChange={handleTabChange} />
-      {status === 'loading' && <p>Loading...</p>}
+      {status === 'loading' && <Loading />}
       {status === 'failed' && <p>Error loading images. Please try again.</p>}
       {status === 'succeeded' && (
         <>
@@ -77,6 +77,7 @@ const App: React.FC = () => {
           />
         </>
       )}
+      <Footer />
     </div>
   );
 };
