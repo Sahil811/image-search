@@ -1,30 +1,71 @@
 .pagination {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin-top: 20px;
+  font-size: 14px;
+  height: 60px;
+}
+
+.resultsInfo {
+  font-weight: bold;
+}
+
+.paginationControls {
+  display: flex;
+  align-items: center;
 }
 
 .button {
   padding: 5px 10px;
-  font-size: 14px;
-  background-color: #007bff;
-  color: white;
-  border: none;
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
   border-radius: 4px;
   cursor: pointer;
-  margin: 0 10px;
+  margin: 0 5px;
 
   &:hover:not(:disabled) {
-    background-color: #0056b3;
+    background-color: #e0e0e0;
   }
 
   &:disabled {
-    background-color: #ccc;
+    opacity: 0.5;
     cursor: not-allowed;
   }
 }
 
 .pageInfo {
+  margin: 0 10px;
+}
+
+.goToPageForm {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.goToPageInput {
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+}
+
+.goToPageLabel {
   font-size: 14px;
+  margin-right: 5px;
+}
+
+.goToPageButton {
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #e0e0e0;
+  }
 }

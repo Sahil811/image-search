@@ -12,9 +12,10 @@ import {
 } from './features/images/imagesSlice';
 import ImageGrid from './components/ImageGrid/ImageGrid';
 import Pagination from './components/Pagination/Pagination';
+import SearchSection from './components/SearchSection/SearchSection';
+import TabNavigation from './components/TabNavigation/TabNavigation';
 import Header from './components/Header/Header';
 import styles from './App.module.scss';
-import SearchSection from './components/SearchSection/SearchSection';
 
 const App: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -32,6 +33,11 @@ const App: React.FC = () => {
 
   const handleSearch = (query: string) => {
     dispatch(setSearchQuery(query));
+  };
+
+  const handleTabChange = (tab: string) => {
+    console.log(`Tab changed to: ${tab}`);
+    // Handle tab change logic here
   };
 
   const handlePageChange = (page: number) => {
@@ -54,6 +60,7 @@ const App: React.FC = () => {
     <div className={styles.app}>
       <Header />
       <SearchSection onSearch={handleSearch} />
+      <TabNavigation onTabChange={handleTabChange} />
       {status === 'loading' && <p>Loading...</p>}
       {status === 'failed' && <p>Error loading images. Please try again.</p>}
       {status === 'succeeded' && (
