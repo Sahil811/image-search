@@ -7,9 +7,11 @@ interface ImageGridProps {
   photos: Photo[];
   onAddToCart: (id: number) => void;
   onDownload: (id: number) => void;
+  onAddToCollection: (id: number) => void;
+  onViewCollection: (id: number) => void;
 }
 
-const ImageGrid: React.FC<ImageGridProps> = ({ photos, onAddToCart, onDownload }) => {
+const ImageGrid: React.FC<ImageGridProps> = ({ photos, onAddToCart, onDownload, onAddToCollection, onViewCollection }) => {
   return (
     <div className={styles.imageGrid}>
       {photos.map((photo) => (
@@ -18,6 +20,8 @@ const ImageGrid: React.FC<ImageGridProps> = ({ photos, onAddToCart, onDownload }
           {...photo}
           onAddToCart={() => onAddToCart(photo.id)}
           onDownload={() => onDownload(photo.id)}
+          onAddToCollection={() => onAddToCollection(photo.id)}
+          onViewCollection={() => onViewCollection(photo.id)}
         />
       ))}
     </div>

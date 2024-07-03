@@ -54,6 +54,14 @@ const App: React.FC = () => {
     console.log(`Download: ${id}`);
   };
 
+  const onAddToCollection = (id: number) => {
+    console.log(`Add to collection: ${id}`);
+  };
+
+  const onViewCollection = (id: number) => {
+    console.log(`view collection: ${id}`);
+  };
+
   const totalPages = Math.ceil(totalResults / 10);
 
   return (
@@ -69,6 +77,8 @@ const App: React.FC = () => {
             photos={photos}
             onAddToCart={handleAddToCart}
             onDownload={handleDownload}
+            onAddToCollection={onAddToCollection}
+            onViewCollection={onViewCollection}
           />
           <Pagination
             currentPage={currentPage}
