@@ -1,3 +1,4 @@
+// App.tsx
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from './app/hooks';
 import {
@@ -11,13 +12,13 @@ import {
   selectSearchQuery,
 } from './features/images/imagesSlice';
 import ImageGrid from './components/ImageGrid/ImageGrid';
-import Pagination from './components/Pagination/Pagination';
 import SearchSection from './components/SearchSection/SearchSection';
 import TabNavigation from './components/TabNavigation/TabNavigation';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import styles from './App.module.scss';
 import Loading from './components/Loading/Loading';
+import ResultsAndPagination from './components/ResultsAndPagination/ResultsAndPagination';
+import styles from './App.module.scss';
 
 const App: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -59,16 +60,24 @@ const App: React.FC = () => {
   };
 
   const onViewCollection = (id: number) => {
-    console.log(`view collection: ${id}`);
+    console.log(`View collection: ${id}`);
   };
 
   const totalPages = Math.ceil(totalResults / 10);
+  const capitalizedQuery = searchQuery.charAt(0).toUpperCase() + searchQuery.slice(1);
 
   return (
     <div className={styles.app}>
       <Header />
       <SearchSection onSearch={handleSearch} />
       <TabNavigation onTabChange={handleTabChange} />
+      <ResultsAndPagination
+        text={`${capitalizedQuery} Stock Photos and images`}
+        totalResults={totalResults}
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageChange}
+      />
       {status === 'loading' && <Loading />}
       {status === 'failed' && <p>Error loading images. Please try again.</p>}
       {status === 'succeeded' && (
@@ -80,10 +89,13 @@ const App: React.FC = () => {
             onAddToCollection={onAddToCollection}
             onViewCollection={onViewCollection}
           />
-          <Pagination
+          <ResultsAndPagination
+            text={`Search Results for ${capitalizedQuery} Stock Photos and images`}
+            totalResults={totalResults}
             currentPage={currentPage}
             totalPages={totalPages}
             onPageChange={handlePageChange}
+            smallText
           />
         </>
       )}
