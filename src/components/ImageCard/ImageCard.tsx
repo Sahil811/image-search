@@ -24,7 +24,7 @@ const ImageCard: React.FC<ImageCardProps> = ({
   return (
     <div className={styles.imageCard}>
       <div className={styles.imageWrapper}>
-        <img src={src.medium} alt={alt} className={styles.image} />
+        <img src={src.medium} alt={alt} className={styles.image} loading='lazy'/>
         <div className={styles.overlay}>
           <div className={styles.topOverlay}>
             <p className={styles.imageText}>{alt}</p>
