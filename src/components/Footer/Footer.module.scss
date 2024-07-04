@@ -1,53 +1,55 @@
+$top-bar-height: 3.125rem;
+$top-bar-padding: .75em;
+$bottom-bar-padding: 1.25rem;
+
 .footer {
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-  }
-  
-  .content {
-    width: 100%;
-  }
-  
-  .topBar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: black;
-    height: 50px;
-    background-color: #00ff00;
-  }
-  
-  .bottomBar {
-    padding: 20px;
-  }
-  
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.content {
+  width: 100%;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $top-bar-padding;
+  background-color: #00ff00;
+}
+
+.bottomBar {
+  padding: $bottom-bar-padding;
+}
+
+.textLarge {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.625rem;
+}
+
+.textMedium {
+  font-weight: bold;
+  font-size: 1.5rem; 
+  margin-bottom: 0.625rem;
+}
+
+.textSmall {
+  font-size: 0.875rem; 
+}
+
+@media (max-width: 37.5rem) {
   .textLarge {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
+    font-size: 1.125rem; 
   }
-  
+
   .textMedium {
-    font-weight: bold;
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 1rem; 
   }
-  
+
   .textSmall {
-    font-size: 14px;
+    font-size: 0.75rem;
   }
-  
-  @media (max-width: 600px) {
-    .textLarge {
-      font-size: 18px;
-    }
-  
-    .textMedium {
-      font-size: 16px;
-    }
-  
-    .textSmall {
-      font-size: 12px;
-    }
-  }
-  
+}

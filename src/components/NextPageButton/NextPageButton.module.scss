@@ -1,22 +1,24 @@
+$button-padding-vertical: 0.625rem;
+$button-padding-horizontal: 3.125rem;
+
 .nextPageButtonContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.25rem 0; 
+}
+
+.nextPageButton {
+  color: black;
+  border: 1px solid black;
+  padding: $button-padding-vertical $button-padding-horizontal;
+  cursor: pointer;
+  font-size: 0.75rem;
+  border-radius: 2px;
+  background-color: #fff;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #f0f0f0;
   }
-  
-  .nextPageButton {
-    color: black;
-    border: none;
-    padding: 10px 50px;
-    cursor: pointer;
-    font-size: 12px;
-    border: 1px solid black;
-    border-radius: 2px;
-    background-color: #fff;
-    transition: background-color 0.3s;
-  
-    &:hover {
-        background-color: #f0f0f0;
-    }
-  }
+}

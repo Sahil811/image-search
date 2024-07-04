@@ -1,7 +1,10 @@
+$grid-column-gap: 20px;
+$grid-padding: 20px;
+
 .imageGrid {
   column-count: 4;
-  column-gap: 20px;
-  padding: 20px;
+  column-gap: $grid-column-gap;
+  padding: $grid-padding;
 }
 
 @media (max-width: 1200px) {

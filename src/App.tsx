@@ -77,13 +77,14 @@ const App: React.FC = () => {
       <Header />
       <SearchSection onSearch={handleSearch} />
       <TabNavigation onTabChange={handleTabChange} />
+      {status === 'succeeded' && (
       <ResultsAndPagination
         text={`${capitalizedQuery} Stock Photos and images`}
         totalResults={totalResults}
         currentPage={currentPage}
         totalPages={totalPages}
         onPageChange={handlePageChange}
-      />
+      />)}
       {status === 'loading' && <Loading />}
       {status === 'failed' && <p>Error loading images. Please try again.</p>}
       {status === 'succeeded' && (

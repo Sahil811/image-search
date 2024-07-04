@@ -1,15 +1,17 @@
+$pagination-padding: 0 0.625rem;
+
 .resultsAndPagination {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
-  }
-  
-  .resultsText {
-    font-size: 16px;
-  }
-  
-  .smallText {
-    font-size: 12px;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: $pagination-padding;
+}
+
+.resultsText {
+  font-size: 1rem;
+}
+
+.smallText {
+  font-size: 0.75rem;
+}

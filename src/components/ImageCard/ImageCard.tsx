@@ -30,7 +30,9 @@ const ImageCard: React.FC<ImageCardProps> = ({
             <p className={styles.imageText}>{alt}</p>
           </div>
           <div className={styles.bottomOverlay}>
-            <p className={styles.photographerText}><span className={styles.imageText}>Photographer:</span>{photographer}</p>
+            <p className={styles.photographerText}>
+              <span className={styles.imageText}>Photographer:</span> {photographer}
+            </p>
             <div className={styles.actions}>
               <button onClick={onAddToCart} className={styles.button}>
                 <FontAwesomeIcon icon={faShoppingCart} />

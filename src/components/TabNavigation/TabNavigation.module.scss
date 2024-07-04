@@ -1,29 +1,38 @@
+$tab-navigation-bg: #f4f4f4;
+$tab-border-color: #000;
+$tab-active-bg: #000;
+$tab-active-color: #fff;
+$tab-hover-bg: #f0f0f0;
+
 .tabNavigation {
-    display: flex;
-    border-bottom: 1px solid #e0e0e0;
-    background-color: #F4F4F4;
-    padding: 20px;
+  display: flex;
+  border-bottom: 0.1rem solid #e0e0e0;
+  background-color: $tab-navigation-bg;
+  padding: 1.25rem;
+}
+
+.tab {
+  $tab-padding-y: 0.625rem;
+  $tab-padding-x: 1.25rem; 
+
+  padding: $tab-padding-y $tab-padding-x;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  border: 0.05rem solid $tab-border-color;
+
+  &:hover {
+    background-color: $tab-hover-bg;
   }
-  
-  .tab {
-    padding: 10px 20px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-    border: 1px solid gray;
-  
-    &:hover {
-      background-color: #f0f0f0;
-    }
+}
+
+.active {
+  background-color: $tab-active-bg;
+  color: $tab-active-color;
+
+  &:hover {
+    background-color: $tab-active-bg;
   }
-  
-  .active {
-    background-color: #000;
-    color: #fff;
-  
-    &:hover {
-      background-color: #000;
-    }
-  }
+}
