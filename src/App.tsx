@@ -1,4 +1,3 @@
-// App.tsx
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from './app/hooks';
 import {
@@ -18,6 +17,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Loading from './components/Loading/Loading';
 import ResultsAndPagination from './components/ResultsAndPagination/ResultsAndPagination';
+import NextPageButton from './components/NextPageButton/NextPageButton';
 import styles from './App.module.scss';
 
 const App: React.FC = () => {
@@ -43,6 +43,12 @@ const App: React.FC = () => {
 
   const handlePageChange = (page: number) => {
     dispatch(setCurrentPage(page));
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < Math.ceil(totalResults / 10)) {
+      dispatch(setCurrentPage(currentPage + 1));
+    }
   };
 
   const handleAddToCart = (id: number) => {
@@ -89,6 +95,8 @@ const App: React.FC = () => {
             onAddToCollection={onAddToCollection}
             onViewCollection={onViewCollection}
           />
+          <NextPageButton onNextPage={handleNextPage} />
+          <div className={styles.grayLine}></div>
           <ResultsAndPagination
             text={`Search Results for ${capitalizedQuery} Stock Photos and images`}
             totalResults={totalResults}

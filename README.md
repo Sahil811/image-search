@@ -1,46 +1,124 @@
-# Getting Started with Create React App
+# Image Search Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This is a dynamic image search application developed using ReactJS, and TypeScript. It allows users to search for images based on a query and view the results in a responsive and adaptive interface. The application fetches data from an API and displays it in a paginated format. Users can view image details, add images to a cart, download images, and explore additional functionalities like infinite scroll and image collections.
 
-In the project directory, you can run:
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Prerequisites
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Node.js (version 18.17.1)
+- npm (version 8.5.5 or later)
 
-### `npm test`
+### Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/sahil811/image-search.git
+   cd image-search
 
-### `npm run build`
+   Install dependencies:
+   npm install --legacy-peer-deps
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   Running the Application
+   npm start```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Features
 
-### `npm run eject`
+- Responsive and adaptive design
+- Dynamic search functionality
+- Image details on hover
+- Action buttons (Add to cart and Download) on hover
+- Paginated results
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## API Details
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The application fetches data from the following API:
+https://simple-pexels-proxy.onrender.com/search?query=car&per_page=5&page=5
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Parameters
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- `query`: Search term
+- `page`: Page number for results
+- `per_page`: Number of results per page
 
-## Learn More
+## Project Structure
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+image-search
+├─ .gitignore
+├─ .prettierrc
+├─ eslint.config.mjs
+├─ package-lock.json
+├─ package.json
+├─ public
+│ ├─ favicon.ico
+│ ├─ index.html
+│ ├─ logo192.png
+│ ├─ logo512.png
+│ ├─ manifest.json
+│ └─ robots.txt
+├─ README.md
+├─ src
+│ ├─ app
+│ │ ├─ hooks.ts
+│ │ └─ store.ts
+│ ├─ App.module.scss
+│ ├─ App.test.tsx
+│ ├─ App.tsx
+│ ├─ components
+│ │ ├─ Footer
+│ │ │ ├─ Footer.module.scss
+│ │ │ └─ Footer.tsx
+│ │ ├─ Header
+│ │ │ ├─ Header.module.scss
+│ │ │ └─ Header.tsx
+│ │ ├─ ImageCard
+│ │ │ ├─ ImageCard.module.scss
+│ │ │ └─ ImageCard.tsx
+│ │ ├─ ImageDropdown
+│ │ │ ├─ ImageDropdown.module.scss
+│ │ │ └─ ImageDropdown.tsx
+│ │ ├─ ImageGrid
+│ │ │ ├─ ImageGrid.module.scss
+│ │ │ └─ ImageGrid.tsx
+│ │ ├─ Loading
+│ │ │ ├─ Loading.module.scss
+│ │ │ └─ Loading.tsx
+│ │ ├─ NextPageButton
+│ │ │ ├─ NextPageButton.module.scss
+│ │ │ └─ NextPageButton.tsx
+│ │ ├─ Pagination
+│ │ │ ├─ Pagination.module.scss
+│ │ │ └─ Pagination.tsx
+│ │ ├─ ResultsAndPagination
+│ │ │ ├─ ResultsAndPagination.module.scss
+│ │ │ └─ ResultsAndPagination.tsx
+│ │ ├─ SearchBar
+│ │ │ ├─ SearchBar.module.scss
+│ │ │ └─ SearchBar.tsx
+│ │ ├─ SearchSection
+│ │ │ ├─ SearchSection.module.scss
+│ │ │ └─ SearchSection.tsx
+│ │ └─ TabNavigation
+│ │ ├─ TabNavigation.module.scss
+│ │ └─ TabNavigation.tsx
+│ ├─ features
+│ │ └─ images
+│ │ ├─ imagesAPI.ts
+│ │ └─ imagesSlice.ts
+│ ├─ index.css
+│ ├─ index.tsx
+│ ├─ logo.svg
+│ ├─ pages
+│ │ └─ _app.tsx
+│ ├─ react-app-env.d.ts
+│ ├─ reportWebVitals.ts
+│ ├─ setupTests.ts
+│ ├─ types
+│ │ └─ index.d.ts
+│ └─ utils
+│ └─ api.ts
+└─ tsconfig.json
