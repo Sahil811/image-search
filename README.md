@@ -47,7 +47,7 @@ https://simple-pexels-proxy.onrender.com/search?query=car&per_page=5&page=5
 
 ## Project Structure
 
-image-search
+```image-search
 ├─ .gitignore
 ├─ .prettierrc
 ├─ eslint.config.mjs
@@ -121,4 +121,4 @@ image-search
 │ │ └─ index.d.ts
 │ └─ utils
 │ └─ api.ts
-└─ tsconfig.json
+└─ tsconfig.json ```
