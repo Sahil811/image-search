@@ -56,11 +56,20 @@ const App: React.FC = () => {
     console.log(`Add to cart: ${id}`);
   };
 
-  const handleDownload = (id: number) => {
-    // Implement download functionality
-    console.log(`Download: ${id}`);
+  const handleDownload = (imageUrl: string) => {
+    fetch(imageUrl)
+      .then(response => response.blob())
+      .then(blob => {
+        const blobUrl = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = blobUrl;
+        link.download = 'image.jpg';
+        link.click();
+        URL.revokeObjectURL(blobUrl);
+      })
+      .catch(error => console.error('Error downloading image:', error));
   };
-
+  
   const onAddToCollection = (id: number) => {
     console.log(`Add to collection: ${id}`);
   };

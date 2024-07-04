@@ -6,7 +6,7 @@ import { Photo } from '../../features/images/imagesAPI';
 interface ImageGridProps {
   photos: Photo[];
   onAddToCart: (id: number) => void;
-  onDownload: (id: number) => void;
+  onDownload: (src: string) => void;
   onAddToCollection: (id: number) => void;
   onViewCollection: (id: number) => void;
 }
@@ -19,7 +19,7 @@ const ImageGrid: React.FC<ImageGridProps> = ({ photos, onAddToCart, onDownload, 
           key={photo.id}
           {...photo}
           onAddToCart={() => onAddToCart(photo.id)}
-          onDownload={() => onDownload(photo.id)}
+          onDownload={() => onDownload(photo.src.original)}
           onAddToCollection={() => onAddToCollection(photo.id)}
           onViewCollection={() => onViewCollection(photo.id)}
         />
