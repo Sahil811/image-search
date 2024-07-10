@@ -4,7 +4,6 @@
 
 This is a dynamic image search application developed using ReactJS, and TypeScript. It allows users to search for images based on a query and view the results in a responsive and adaptive interface. The application fetches data from an API and displays it in a paginated format. Users can view image details, add images to a cart, download images, and explore additional functionalities like infinite scroll and image collections.
 
-
 ## Getting Started
 
 ### Prerequisites
@@ -15,7 +14,8 @@ This is a dynamic image search application developed using ReactJS, and TypeScri
 ### Installation
 
 1. Clone the repository:
-   ```sh
+
+   ````sh
    git clone https://github.com/sahil811/image-search.git
    cd image-search
 
@@ -24,7 +24,7 @@ This is a dynamic image search application developed using ReactJS, and TypeScri
 
    Running the Application
    npm start```
-
+   ````
 
 ## Features
 
@@ -47,7 +47,7 @@ https://simple-pexels-proxy.onrender.com/search?query=car&per_page=5&page=5
 
 ## Project Structure
 
-```image-search
+````image-search
 ├─ .gitignore
 ├─ .prettierrc
 ├─ eslint.config.mjs
@@ -112,13 +112,11 @@ https://simple-pexels-proxy.onrender.com/search?query=car&per_page=5&page=5
 │ ├─ index.css
 │ ├─ index.tsx
 │ ├─ logo.svg
-│ ├─ pages
-│ │ └─ _app.tsx
 │ ├─ react-app-env.d.ts
 │ ├─ reportWebVitals.ts
 │ ├─ setupTests.ts
 │ ├─ types
 │ │ └─ index.d.ts
 │ └─ utils
-│ └─ api.ts
 └─ tsconfig.json ```
+````
